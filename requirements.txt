@@ -1,0 +1,44 @@
+# Core
+python-dotenv==1.0.0
+
+# Numerical
+numpy==1.24.4
+faiss-cpu==1.7.4
+pandas==2.0.3
+
+torch==2.0.1 
+sentence-transformers==2.2.2 
+transformers==4.36.2 
+huggingface-hub==0.23.3
+accelerate
+
+# Vector DB / Embeddings
+sentence-transformers==2.2.2
+chromadb==0.4.15
+
+torch==2.0.1 
+torchvision==0.15.2 
+torchaudio==2.0.2
+
+# PDF & Data
+pdfplumber==0.10.3
+openpyxl==3.1.2
+
+# API / Backend
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+
+# Visualization (optional)
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# LLMs (optional – keep but not required now)
+openai==1.6.1
+google-generativeai==0.3.2
+tiktoken==0.5.1
+
+# System
+swig==4.1.1
+
+ollama==0.6.1
