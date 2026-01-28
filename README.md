@@ -1,35 +1,31 @@
 # RBI NBFC Regulatory Chatbot
-A RAG based chatbot is developed using open source LLM model (LLAMA 3.2: 3b) to answer questions based on RBI regulations governing Non-Banking Financial Companies (NBFCs).
 
-This chatbot follows a **Retrieval-Augmented Generation (RAG)** approach:
+A **Retrieval-Augmented Generation (RAG)** chatbot is developed to answer queries based on RBI regulations governing Non-Banking Financial Companies (NBFCs). This system is optimized for local execution on **MacBook Air M1 (8GB RAM)**.
 
-1. **User Query**
-- User submits a regulatory question via the chat UI.
+---
 
-2. **Context Retrieval**
-- Relevant RBI NBFC regulatory content is retrieved from a predefined knowledge vector database (embeddings).
-- Only the retrieved context is used for response generation.
+## Overview
+This bot provides an interface for regulatory compliance by using the **Llama 3.2: 3b** model in a limited knowledge base. Instead of relying on general training data, the bot strictly uses retrieved snippets from official RBI Master Directions to ensure accuracy and reduce hallucinations.
 
+## Techology used
+* **LLM:** Llama 3.2 (3B) via [Ollama](https://ollama.com/)
+* **Backend:** FastAPI (Python 3.9+)
+* **Vector Database:** FAISS (Facebook AI Similarity Search)
+* **Embeddings:** `all-mpnet-base-v2` (Sentence-Transformers)
+* **Frontend:** HTML
 
-3. **Controlled Generation**
-- The language model generates responses strictly limited to the provided RBI context.
-- If information is not explicitly available, the system responds accordingly.
+## How it Works (RAG Architecture)
 
+1. **Ingestion:** RBI Guidelines (PDFs) are parsed, cleaned, and split into semantic chunks.
+2. **Vector Storage:** Chunks are converted into 768-dimensional embeddings using `all-mpnet-base-v2` and stored in a **FAISS** index.
+3. **Retrieval:** When a user asks a question, the system finds the top 3 most relevant regulatory clauses.
+4. **Generation:** A structured prompt containing the user query and retrieved chunks are sent to **Llama 3.2** via **Ollama**.
+5. **Interface:** A **FastAPI** backend serves the model's response to a responsive web UI.
+   
+---
 
-4. **Response Delivery**
-- The answer is displayed to the user.
-- Temporary responses are stored for better response generation.
-
-
-
-
-## 🖼️ Application Screenshot
-
-Below is a screenshot of the locally developed chatbot interface:
+## Application Screenshot
 
 ![RBI NBFC Chatbot Screenshot](./screenshot/bot_image_new.png)
 
-⚠️ The application does not store user data, chat logs, timestamps, or personal information and processes all interactions in memory.
-
-⚠️ The system does not rely on external knowledge beyond the supplied RBI regulatory context.
-
+---
