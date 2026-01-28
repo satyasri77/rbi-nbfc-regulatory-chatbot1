@@ -41,3 +41,11 @@ This chatbot follows a **Retrieval-Augmented Generation (RAG)** approach:
 
 > ⚠️ The system does not rely on external knowledge beyond the supplied RBI regulatory context.
 
+## 🖼️ Application Screenshot
+
+
+Below is a screenshot of the locally developed chatbot interface:
+
+
+![RBI NBFC Chatbot Screenshot](./screenshots/bot_image.png)
+
