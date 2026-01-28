@@ -16,7 +16,7 @@ This bot provides an interface for regulatory compliance by using the **Llama 3.
 
 ## How it Works (RAG Architecture)
 
-1. **Ingestion:** RBI Guidelines (PDFs) are parsed, cleaned, and split into semantic chunks.
+1. **Reading Data:** RBI Guidelines (PDFs) are parsed, cleaned, and split into semantic chunks.
 2. **Vector Storage:** Chunks are converted into 768-dimensional embeddings using `all-mpnet-base-v2` and stored in a **FAISS** index.
 3. **Retrieval:** When a user asks a question, the system finds the top 3 most relevant regulatory clauses.
 4. **Generation:** A structured prompt containing the user query and retrieved chunks are sent to **Llama 3.2** via **Ollama**.
