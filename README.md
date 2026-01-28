@@ -1,5 +1,5 @@
 # RBI NBFC Regulatory Chatbot
-A lightweight, RAG based chatbot is developed using open source LLM model (LLAMA 3.2: 3b) to answer questions strictly based on RBI regulations governing Non-Banking Financial Companies (NBFCs).
+A RAG based chatbot is developed using open source LLM model (LLAMA 3.2: 3b) to answer questions based on RBI regulations governing Non-Banking Financial Companies (NBFCs).
 
 ## Architecture (RAG Pipeline)
 
