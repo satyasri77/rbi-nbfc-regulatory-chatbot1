@@ -47,5 +47,5 @@ This chatbot follows a **Retrieval-Augmented Generation (RAG)** approach:
 Below is a screenshot of the locally developed chatbot interface:
 
 
-![RBI NBFC Chatbot Screenshot](./screenshots/bot_image.png)
+![RBI NBFC Chatbot Screenshot](./screenshot/bot_image.png)
 
