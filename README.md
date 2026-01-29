@@ -7,7 +7,7 @@ A **Retrieval-Augmented Generation (RAG)** chatbot is developed to answer querie
 ## Overview
 This bot provides an interface for regulatory compliance by using the **Llama 3.2: 3b** model in a limited knowledge base. Instead of relying on general training data, the bot strictly uses retrieved snippets from official RBI Master Directions to ensure accuracy and reduce hallucinations.
 
-## Techology used
+## Technology used
 * **LLM:** Llama 3.2 (3B) via [Ollama](https://ollama.com/)
 * **Backend:** FastAPI (Python 3.9+)
 * **Vector Database:** FAISS (Facebook AI Similarity Search)
@@ -26,6 +26,6 @@ This bot provides an interface for regulatory compliance by using the **Llama 3.
 
 ## Application Screenshot
 
-![RBI NBFC Chatbot Screenshot](./screenshot/bot_image_new.png)
+![RBI NBFC Chatbot Screenshot](./screenshot/bot_img_2.png)
 
 ---
