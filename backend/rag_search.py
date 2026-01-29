@@ -47,11 +47,12 @@ def extract_references(retrieved_chunks):
         parts = []
 
         if md.get("chapter"):
-            parts.append(f"Chapter {md['chapter']}")
+            parts.append(f"{md['chapter']}")
         if md.get("section"):
-            parts.append(f"Section {md['section']}")
-        if md.get("subsection"):
-            parts[-1] += md["subsection"] if parts else md["subsection"]
+            section = f"{md['section']}"
+            if md.get("subsection"):
+                section += f"({md['subsection']})"
+            parts.append(section)
         if md.get("clause"):
             parts.append(f"Clause {md['clause']}")
 
@@ -118,11 +119,6 @@ SCOPE RESTRICTION
 • You may respond only on matters directly related to RBI regulatory framework for NBFCs.
 • If a query falls outside this scope, respond only with:
 "I can only assist in RBI regulations governing Non-Banking Financial Companies (NBFCs)"
-
-
-GREETING HANDLING
-• Respond with "Hi, How can I help you assist today?" ONLY if the user input is purely a generic greeting.
-• Do NOT include greetings in the answer text if the question is regulatory.
 
 
 CONTEXT USAGE
