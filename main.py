@@ -24,6 +24,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str
+    references: list[str]
 
 
 # ---- Serve HTML ----
@@ -42,7 +43,6 @@ def chat(req: ChatRequest):
     )
     # Return JSON with intent + answer + references
     return ChatResponse(
-    intent=response_json["intent"],
     answer=response_json["answer"],
     references=response_json.get("references", [])
     )
