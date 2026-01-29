@@ -150,15 +150,41 @@
 
         const data = await response.json();
 
-        // Bot message (left aligned)
+        // // Bot message (left aligned)
+        // chatBox.innerHTML += `
+        //     <div class="message bot-message">
+        //         <div class="bubble bot-bubble">${data.answer}</div>
+        //     </div>
+        // `;
+
+        // chatHistory.push(`User: ${query}`);
+        // chatHistory.push(`Bot: ${data.answer}`);
+
+        // chatBox.scrollTop = chatBox.scrollHeight;
+        // 🔹 Build bot message
+        let botHtml = `<div>${data.answer}</div>`;
+
+
+        // 🔹 Append references if present
+        if (data.references && data.references.length > 0) {
+        botHtml += `<hr><small><b>References:</b><ul>`;
+        data.references.forEach(ref => {
+        botHtml += `<li>${ref}</li>`;
+        });
+        botHtml += `</ul></small>`;
+        }
+
+
         chatBox.innerHTML += `
-            <div class="message bot-message">
-                <div class="bubble bot-bubble">${data.answer}</div>
-            </div>
+        <div class="message bot-message">
+        <div class="bubble bot-bubble">${botHtml}</div>
+        </div>
         `;
+
 
         chatHistory.push(`User: ${query}`);
         chatHistory.push(`Bot: ${data.answer}`);
+
 
         chatBox.scrollTop = chatBox.scrollHeight;
     }
